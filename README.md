@@ -1,5 +1,5 @@
 # split-require-test
-A test that reproduces non-determisitic builds with browserify and split-require.
+A test that reproduces non-determisitic builds with browserify and react-loadable/split-require.
 
 How to test:
  * run yarn on the root folder to install dependencies;
