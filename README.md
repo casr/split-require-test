@@ -10,7 +10,7 @@ How to test:
 
 The test script attempts to repeatedly make the build. As the output is always
 expected to be 4 files, we detect a hash change by simply looking for there to
-be not 4 files in the `bundle` directory.
+be more than 4 files in the `bundle` directory, this means a new hash was generated for the same files.
 
 The file that changes represents the file comp3.jsx, which in turn, imports
 comp1.jsx and comp2.jsx, these last two are also imported by react-loadable in
