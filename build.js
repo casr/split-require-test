@@ -4,14 +4,12 @@ const browserify = require('browserify');
 const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
-const splitRequire = require('split-require/plugin')
 const to = require('flush-write-stream')
 
 const b = browserify({ debug: true })
-b.add('./components/main.js')
-b.plugin(splitRequire, {
-  output: hashOutput
-})
+b.add('./main.js')
+b.transform('babelify')
+b.transform('envify')
 b.bundle().pipe(hashOutput('main.js'))
 
 function hashOutput (bundleName) {
